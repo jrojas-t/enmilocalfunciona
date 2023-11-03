@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "e6e78ae8-cbfa-47e6-ae5a-820e159fe87f",
+		"name": "API Rust",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30617038"
+	},
+	"item": [
+		{
+			"name": "Health Checker",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlServer}}/api/health",
+					"host": [
+						"{{urlServer}}"
+					],
+					"path": [
+						"api",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All with Paginator",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Title Content\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data[0].title).to.eql(\"Aprendiendo Rust CRUD\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlServer}}/api/books?page=1&limit=2",
+					"host": [
+						"{{urlServer}}"
+					],
+					"path": [
+						"api",
+						"books"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get  by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlServer}}/api/book/:id",
+					"host": [
+						"{{urlServer}}"
+					],
+					"path": [
+						"api",
+						"book",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{idBook}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Boook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Crear la variable Id y setearla con el nuevo valor de IdBook\r",
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"idBook\", jsonData.data.id);\r",
+							"\r",
+							"//Validar si la petición fue OK\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});\r",
+							"\r",
+							"//Transformar de JSON a XML\r",
+							"function OBJtoXML(obj) {\r",
+							"  var xml = '';\r",
+							"  for (var prop in obj) {\r",
+							"    xml += obj[prop] instanceof Array ? '' : \"<\" + prop + \">\";\r",
+							"    if (obj[prop] instanceof Array) {\r",
+							"      for (var array in obj[prop]) {\r",
+							"        xml += \"<\" + prop + \">\";\r",
+							"        xml += OBJtoXML(new Object(obj[prop][array]));\r",
+							"        xml += \"</\" + prop + \">\";\r",
+							"      }\r",
+							"    } else if (typeof obj[prop] == \"object\") {\r",
+							"      xml += OBJtoXML(new Object(obj[prop]));\r",
+							"    } else {\r",
+							"      xml += obj[prop];\r",
+							"    }\r",
+							"    xml += obj[prop] instanceof Array ? '' : \"</\" + prop + \">\";\r",
+							"  }\r",
+							"  var xml = xml.replace(/<\\/?[0-9]{1,}>/g, '');\r",
+							"  return xml\r",
+							"}\r",
+							"postman.setEnvironmentVariable(\"bodyXML\", OBJtoXML(jsonData));"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Aprendiendo Rust CRUD 5\",\r\n    \"content\": \"Lenguaje de Programación Rust\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlServer}}/api/book/create",
+					"host": [
+						"{{urlServer}}"
+					],
+					"path": [
+						"api",
+						"book",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update  Todo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Attribute Completed is True\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    console.log('jsonData.data[0].completed => ' + jsonData.data.completed);\r",
+							"    pm.expect(jsonData.data.completed).to.equal(true);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Nuevo Titulo Aprendiendo RUST\",\r\n    \"completed\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlServer}}/api/book/:id",
+					"host": [
+						"{{urlServer}}"
+					],
+					"path": [
+						"api",
+						"book",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{idBook}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete  Todo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{urlServer}}/api/book/:id",
+					"host": [
+						"{{urlServer}}"
+					],
+					"path": [
+						"api",
+						"book",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{idBook}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

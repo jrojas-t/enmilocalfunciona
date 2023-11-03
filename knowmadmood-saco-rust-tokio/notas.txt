@@ -1,0 +1,7 @@
+Build
+-----
+docker build -t knowmadmood-saco-rust-tokio .
+
+Run
+---
+docker run -d --name knowmadmood-saco-rust-tokio -p 3000:3000 knowmadmood-saco-rust-tokio
