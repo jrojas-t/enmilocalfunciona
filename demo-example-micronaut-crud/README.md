@@ -7,35 +7,26 @@
 ---
 
 - [Micronaut Maven Plugin documentation](https://micronaut-projects.github.io/micronaut-maven-plugin/latest/)
-## Feature serialization-jackson documentation
 
+## Stack Tecnológico
+- [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [Micronaut 4.1.2](https://micronaut.io/)
+
+## Dependencias con Proyectos de Arquitectura
+
+## Dependencias con Terceros
+- [H2](https://www.h2database.com/html/download.html)
 - [Micronaut Serialization Jackson Core documentation](https://micronaut-projects.github.io/micronaut-serialization/latest/guide/)
-
-
-## Feature jdbc-hikari documentation
-
 - [Micronaut Hikari JDBC Connection Pool documentation](https://micronaut-projects.github.io/micronaut-sql/latest/guide/index.html#jdbc)
-
-
-## Feature lombok documentation
-
 - [Micronaut Project Lombok documentation](https://docs.micronaut.io/latest/guide/index.html#lombok)
-
 - [https://projectlombok.org/features/all](https://projectlombok.org/features/all)
-
-
-## Feature maven-enforcer-plugin documentation
-
 - [https://maven.apache.org/enforcer/maven-enforcer-plugin/](https://maven.apache.org/enforcer/maven-enforcer-plugin/)
-
-
-## Feature micronaut-aot documentation
-
 - [Micronaut AOT documentation](https://micronaut-projects.github.io/micronaut-aot/latest/guide/)
-
-
-## Feature data-jdbc documentation
-
 - [Micronaut Data JDBC documentation](https://micronaut-projects.github.io/micronaut-data/latest/guide/index.html#jdbc)
 
+## Prerequisitos
+- [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [IntelliJ](https://www.jetbrains.com/es-es/idea/download/?section=windows)
 
+## Autor
+- [Jhonatan Rojas Terrones](https://www.linkedin.com/in/jrojast/)
