@@ -43,6 +43,7 @@ Generando reporte en HTML
 newman run ./newman/collections/API_Rust.postman_collection.json -e ./newman/collections/environment/Local-API_Rust_Environment.postman_environment.json -r htmlextra
 ```
 
+
 ## Opciones de Reporte ##
 
 Si necesitamos tener un informe que muestre de forma específica y clara tanto la ejecución de los tests, como los resultados de los mismos.
