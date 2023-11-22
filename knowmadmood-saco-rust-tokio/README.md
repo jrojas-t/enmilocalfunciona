@@ -11,7 +11,7 @@
 - [Proceso de Despliegue](#Proceso-de-despliegue)
 - [Dockerización](#Dockerización)
 - [GitHooks](/knowmadmood-saco-rust-tokio/git/README.md)
-- [Newman](/knowmadmood-saco-rust-tokio/newman/README.md)
+- [Newman](/knowmadmood-saco-rust-tokio/newman/collections/README.md)
 - [Libreria](/knowmadmood-saco-rust-tokio/lib-saco-utils/README.md)
 - [Autor(es)](#Autor)
 

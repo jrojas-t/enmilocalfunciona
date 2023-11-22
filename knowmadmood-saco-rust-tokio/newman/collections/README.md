@@ -58,4 +58,4 @@ Cli es la opción por defecto y, a su vez, consta de una gran variedad de opcion
 - reporter-cli-no-assertions: desactiva la salida de las aserciones a medida que ocurren.
 - reporter-cli-no-success-assertions: desactiva la salida para aserciones exitosas a medida que ocurren.
 - reporter-cli-no-console: desactiva la salida de console.log (y otras llamadas a la consola) de los scripts de la colección.
-- reporter-cli-no--banner: desactiva el banner de Newman que se muestra al comienzo de cada ejecución de la colección.
+- reporter-cli-no-banner: desactiva el banner de Newman que se muestra al comienzo de cada ejecución de la colección.
