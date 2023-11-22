@@ -5,9 +5,10 @@ use axum::{
     Json,
 };
 use uuid::Uuid;
+use lib_saco_utils;
 
 use crate::{
-    model::{QueryOptions, Book, UpdateSchema, DB},
+    model::{QueryOptions, Book, UpdateSchema, DB, Operation},
     response::{BookListResponse, ApiYesOrNoResponse, CRUDResponse},
 };
 
@@ -190,4 +191,21 @@ pub async fn get_api_yes_no() -> impl IntoResponse {
     });
 
     Json(json_response)
+}
+
+pub async fn post_operation(
+    Json(body): Json<Operation>,
+    ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)>  {
+
+    let operation: String = body.operation.to_owned();
+    let number_a: i32 = body.number_a;
+    let number_b: i32 = body.number_b;
+
+    let resp: i32 = lib_saco_utils::operation(operation.as_str(), number_a, number_b);
+
+    let json_response = serde_json::json!({
+        "answer": resp,
+    });
+
+    Ok((StatusCode::OK, Json(json_response)))
 }

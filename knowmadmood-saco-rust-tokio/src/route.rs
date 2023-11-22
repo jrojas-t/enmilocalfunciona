@@ -5,7 +5,7 @@ use axum::{
 
 use crate::{
     handler::{
-        health_handler, post_handler, put_handler, delete_handler, get_handler , get_all_handler, get_api_yes_no,
+        health_handler, post_handler, put_handler, delete_handler, get_handler , get_all_handler, get_api_yes_no, post_operation,
     },
     model,
 };
@@ -22,5 +22,6 @@ pub fn create_router() -> Router {
                                         .delete(delete_handler),
         )
         .route("/api/apiexternal", get(get_api_yes_no))
+        .route("/api/operation", post(post_operation))
         .with_state(db)
 }

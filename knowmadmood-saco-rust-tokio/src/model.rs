@@ -5,6 +5,15 @@ use tokio::sync::Mutex;
 
 #[allow(non_snake_case)]
 #[derive(Debug, Deserialize, Serialize, Clone)]
+
+pub struct Operation {
+    pub operation: String,
+    pub number_a: i32,
+    pub number_b: i32,
+}
+
+#[allow(non_snake_case)]
+#[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct Book {
     pub id: Option<String>,
     pub title: String,
