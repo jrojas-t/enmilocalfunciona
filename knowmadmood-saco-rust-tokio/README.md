@@ -1,5 +1,5 @@
 
-![Logo](https://www.dafont.com/forum/attach/orig/8/5/852715.png)
+![Logo](https://upload.wikimedia.org/wikipedia/commons/e/ea/Rust_vector_logo.svg)
 
 [![rust](https://img.shields.io/badge/rust-1.74.0-red)](https://img.shields.io/badge/rust-1.74.0-red)[![postman](https://img.shields.io/badge/postman-latest-orange)](https://img.shields.io/badge/postman-latest-orange)[![docker](https://img.shields.io/badge/docker->4.20-blue)](https://img.shields.io/badge/docker->4.20-blue)[![newman](https://img.shields.io/badge/newman->6.0.0-green)](https://img.shields.io/badge/newman->6.0.0-green)[![git](https://img.shields.io/badge/git-latest-orange)](https://img.shields.io/badge/git-latest-orange)[![crates.io](https://img.shields.io/crates/v/restson.svg)](https://crates.io/crates/restson)[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://raw.githubusercontent.com/spietika/restson-rust/master/LICENSE)[![Swagger: latest](https://img.shields.io/badge/swagger-latest-green.svg)](https://docs.rs/restson/)
 
