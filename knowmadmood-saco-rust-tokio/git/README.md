@@ -6,7 +6,7 @@ Es una herramienta que te permite ejecutar las colecciones de postman desde line
 **Índice**
 
 - [Pre-requisitos](#Pre-requisitos)
-- [Instalación](#Instalacion)
+- [Instalación](#Instalación)
 - [Configuración](#Configuración)
 - [Lenguajes Soportados](#Lenguajes-soportados)
 
@@ -39,8 +39,8 @@ pre-commit --version
 
 >**Importante**
 >
->Se recomienda crear un directorio especifico para las configuraciones del GitHooks, en este ejemplo se ha creado el directorio (./git/hooks)
->
+>Se recomienda crear un directorio especifico para las configuraciones del GitHooks.
+> Para este ejemplo se ha creado el directorio (./git/hooks)
 
 Creación del fichero .pre-commit-config.yaml
 
