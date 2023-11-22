@@ -9,7 +9,8 @@
 - [Montaje de Entorno](#Montaje-de-Entorno)
 - [Proceso de Despliegue](#Proceso-de-despliegue)
 - [Dockerización](#Dockerización)
-- [Rust desde cero][Rust-desde-cero]
+- [Rust desde cero](#Rust-desde-cero)
+- [Recomendaciones de Pluggins](#Recomendaciones-de-pluggins)
 
 **Conceptos Adicionales**
 
@@ -69,12 +70,12 @@ Por lo tanto Cargo sirve para:
 - Ejecutar los tests (test, bench)
 
 ## Pre-requisitos
-
- - [Rust v1.74.0](https://www.rust-lang.org/tools/install)
- - [Postman latest version ](https://www.postman.com/downloads/)
- - [Docker > 4.20](https://www.docker.com/products/docker-desktop/)
+ - [Visual Studio Code - latest version](https://code.visualstudio.com/download)
+ - [Rust - v1.74.0](https://www.rust-lang.org/tools/install)
+ - [Postman - latest version ](https://www.postman.com/downloads/)
+ - [Docker - v4.20](https://www.docker.com/products/docker-desktop/)
  - [Newman v6.0.0](https://www.npmjs.com/package/newman)
- - [Git latest version](https://git-scm.com/downloads)
+ - [Git - latest version](https://git-scm.com/downloads)
 
 ## Montaje de Entorno ##
 
@@ -239,6 +240,35 @@ fn main() {
     println!("Hello, world!");
 }
 ```
+
+## Recomendaciones de Pluggins
+
+- Name: rust-analyzer
+Id: rust-lang.rust-analyzer
+Description: Rust language support for Visual Studio Code
+Version: 0.3.1740
+Publisher: The Rust Programming Language
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer
+
+- Name: crates
+Id: serayuzgur.crates
+Description: Helps Rust developers managing dependencies with Cargo.toml.
+Version: 0.6.3
+Publisher: Seray Uzgur
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates
+
+- Name: readme
+Id: ganlinzhen.readme
+Description: readme
+Version: 0.0.2
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ganlinzhen.readme
+
+- Name: GitHooks -- Simple VS Code UI for git hooks.
+Id: lakshmikanthayyadevara.githooks
+Description: Integrating Git Hooks to vscode UI; Can View, Edit and Run your local Git Hooks which can prevent your git repository from potential issues and enforce code quality.
+Version: 1.3.4
+Publisher: lakshmikanthayyadevara
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=lakshmikanthayyadevara.githooks
 
 ## Autor
 
