@@ -1,0 +1,14 @@
+- id: fmt
+  name: fmt
+  description: Formatear archivos con cargo fmt.
+  entry: cargo fmt
+  language: system
+  types: [rust]
+  args: ["--"]
+- id: cargo-check
+  name: cargo check
+  description: Verifique el paquete en busca de errores.
+  entry: cargo check
+  language: system
+  types: [rust]
+  pass_filenames: false
