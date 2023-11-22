@@ -90,6 +90,13 @@ Una vez que tenemos listo nuestro fichero de configuración, ejecutamos el sigui
 ```bash
 pre-commit install
 ```
+
+Si queremos instalar en otra ciclo que no sea pre-commit ejemplo en pre-push, ejecutar el siguiente comando
+
+```bash
+pre-commit install --hook-type pre-commit --hook-type pre-push
+```
+
 Con esto, pre-commit estaría listo para mejorar nuestros commits. Sin embargo, si vamos a usarlo en un proyecto ya existente, quizá tenga sentido revisar todo el código actual en lugar de ir revisando los ficheros que van entrando a nuevos commits. Podemos hacer esto con el siguiente comando:
 
 Ejecute con todos los archivos para verificar (Opcional)
