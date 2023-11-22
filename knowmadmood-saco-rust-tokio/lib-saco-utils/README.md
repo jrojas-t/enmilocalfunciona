@@ -17,9 +17,9 @@ Nos genera una estructura de proyecto como esta:
 
 ```bash
 lib-saco-utils
- /src
-     lib.rs
- Cargo.toml
+    └── src
+        └── lib.rs
+    └── Cargo.toml
 ```
 
 Los metodos o operaciones estarán dentro del fichero lib.rs
