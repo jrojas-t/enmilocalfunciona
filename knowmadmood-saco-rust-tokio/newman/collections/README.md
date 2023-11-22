@@ -1,11 +1,11 @@
 
 # Newman
 
-Es una herramienta que te permite ejecutar las colecciones de postman desde linea de comandos.
+Newman nos permite ejecutar y probar sin esfuerzo colecciones de Postman directamente desde la línea de comandos. Esto nos abre un gran abanico de posibilidades, que pueden ser explotadas por cada usuario según las necesidades de su proyecto y su ingenio.
 
 **Índice**
 - [Pre-requisitos](#Pre-requisitos)
-- [Instalación](#Instalacion)
+- [Instalación](#Instalación)
 - [Ejecutar](#Ejecutar)
 - [Opciones de Reporte](#Opciones-de-reporte)
 
@@ -31,7 +31,7 @@ npm install -g newman-reporter-htmlextra
 
 ## Ejecutar ##
 
-Para ejecutar enviale environment por entorno
+Tenemos Newman y nuestras colecciones disponibles en nuestra máquina. Llega el momento de ejecutarlas utilizando un comando similar al del ejemplo que se muestra a continuación. En él, se indica la llamada a la herramienta, el parámetro “run”, la ruta de la colección y en este caso tambien vamos a enviarle la ruta del environment correspondiente a la colección.
 
 ```bash
 newman run ./newman/collections/API_Rust.postman_collection.json -e ./newman/collections/environment/Local-API_Rust_Environment.postman_environment.json

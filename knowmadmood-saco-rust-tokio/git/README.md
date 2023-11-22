@@ -28,6 +28,8 @@ Validar la instalación y su versión con:
 pre-commit --version
 ```
 
+Una vez tengamos instalado pre-commit, abriremos el proyecto en el que lo queramos usar y crearemos el fichero .pre-commit-config.yaml, que contendrá la configuración con la que queremos que la herramienta funcione.
+
 ## Configuración ##
 
 - Crear un fichero .pre-commit-config.yaml
@@ -58,6 +60,10 @@ repos:
     -   id: black
 ```
 
+Vemos cómo se definen los repositorios de los que se van a tomar los hooks (de momento, solo estamos usando un repositorio) y los respectivos hooks. Se trata de comprobaciones generales, pero podemos ir añadiendo nuevos hooks en función de nuestras preferencias.
+
+También hemos añadido nuevos hooks, tanto del repositorio usado anteriormente como de nuevos repositorios.
+
 Creación del fichero .pre-commit-hooks.yaml
 
 ```yaml
@@ -78,17 +84,20 @@ Creación del fichero .pre-commit-hooks.yaml
 
 ```
 
-Instalación del Hook Script
+Una vez que tenemos listo nuestro fichero de configuración, ejecutamos el siguiente comando para configurar los Git Hooks
 
 ```bash
 pre-commit install
 ```
+Con esto, pre-commit estaría listo para mejorar nuestros commits. Sin embargo, si vamos a usarlo en un proyecto ya existente, quizá tenga sentido revisar todo el código actual en lugar de ir revisando los ficheros que van entrando a nuevos commits. Podemos hacer esto con el siguiente comando:
 
 Ejecute con todos los archivos para verificar (Opcional)
 
 ```bash
 pre-commit run --all-files
 ```
+
+Tanto ejecutando pre-commit contra todos los ficheros como al hacer un commit, nos mostrará el resultado y las acciones realizadas. En la siguiente captura podemos ver cómo se muestra la fase en la que ha fallado (Fix End of Files) y los ficheros afectados
 
 ## Lenguajes Soportados ##
 
