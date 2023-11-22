@@ -11,8 +11,8 @@ Es una herramienta que te permite ejecutar las colecciones de postman desde line
 
 ## Pre-requisitos ##
 
- - [NodeJs](https://nodejs.org/en/download)
- - [Npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+ - [NodeJS > v20.2.0](https://nodejs.org/en/download)
+ - [Npm > v9.7.0](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
 ## Instalación ##
 
@@ -23,18 +23,24 @@ Para poder disfrutar de él debemos instalarlo como cualquier otro paquete de no
 ```bash
 npm install -g newman
 ```
-## Ejecutar ##
-
-Para iniciar newman, debemos de ejecutar el siguiente comando
+Instalación de la extensión para la generación de Reportes en HTML
 
 ```bash
-newman run ./API Rust.postman_collection.json
+npm install -g newman-reporter-htmlextra
 ```
 
-Para ejecutar enviale environemt por entorno
+## Ejecutar ##
+
+Para ejecutar enviale environment por entorno
 
 ```bash
-newman run ./API Rust.postman_collection.json -e ./environment/[Local] - API Rust Environment.postman_environment
+newman run ./newman/collections/API_Rust.postman_collection.json -e ./newman/collections/environment/Local-API_Rust_Environment.postman_environment.json
+```
+
+Generando reporte en HTML
+
+```bash
+newman run ./newman/collections/API_Rust.postman_collection.json -e ./newman/collections/environment/Local-API_Rust_Environment.postman_environment.json -r htmlextra
 ```
 
 ## Opciones de Reporte ##

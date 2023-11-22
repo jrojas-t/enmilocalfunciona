@@ -2,11 +2,11 @@
 ![Logo](https://www.dafont.com/forum/attach/orig/8/5/852715.png)
 
 **Índice**
-- [Introducción](#Introduccion)
+- [Introducción](#Introducción)
 - [Pre-requisitos](#Pre-requisitos)
 - [Montaje de Entorno](#Montaje-de-Entorno)
 - [Proceso de Despliegue](#Proceso-de-despliegue)
-- [Dokerización](#Dokerizacion)
+- [Dokerización](#Dokerización)
 - [Autor(es)](#Autor)
 
 
@@ -18,11 +18,11 @@ Iniciativa de formación basada en un enfoque agile-squat creada y usada por "kn
 
 ## Pre-requisitos
 
- - [Rust](https://www.rust-lang.org/tools/install)
- - [Postman](https://www.postman.com/downloads/)
- - [Docker](https://www.docker.com/products/docker-desktop/)
- - [Newman](https://www.npmjs.com/package/newman)
- - [Git](https://git-scm.com/downloads)
+ - [Rust v1.74.0](https://www.rust-lang.org/tools/install)
+ - [Postman lastet version ](https://www.postman.com/downloads/)
+ - [Docker > 4.20](https://www.docker.com/products/docker-desktop/)
+ - [Newman v6.0.0](https://www.npmjs.com/package/newman)
+ - [Git latest version](https://git-scm.com/downloads)
 
 ## Montaje de Entorno ##
 
@@ -48,7 +48,7 @@ cd ./knowmadmood-saco-rust-tokio
 Para realizar la compilación del proyecto, ejecutamos el siguiente comando:
 
 ```bash
-  cargo build
+cargo build
 ```
 
 #### Verificación ####
@@ -56,7 +56,7 @@ Para realizar la compilación del proyecto, ejecutamos el siguiente comando:
 Para realizar la verificación antes de compilar el proyecto, ejecutamos el siguiente comando:
 
 ```bash
-  cargo check
+cargo check
 ```
 
 #### Despliegue ####
@@ -71,7 +71,7 @@ Para realizar el desplegar la aplicación en un entorno local, ejecutar el sigui
 >
 
 ```bash
-  cargo run
+cargo run
 ```
 
 ## Dockerización ##
@@ -79,13 +79,20 @@ Para realizar el desplegar la aplicación en un entorno local, ejecutar el sigui
 Para generar la imagen docker
 
 ```bash
-  docker build -t knowmadmood-saco-rust-tokio .
+docker build -t knowmadmood-saco-rust-tokio . -f .\docker\Dockerfile
 
 ```
 Para iniciar la aplicación utilizando la imagen generada anteriormente
 
 ```bash
-  docker run -d --name knowmadmood-saco-rust-tokio -p 3000:3000 knowmadmood-saco-rust-tokio
+docker run -d --name knowmadmood-saco-rust-tokio -p 3000:3000 knowmadmood-saco-rust-tokio
+
+```
+
+Para eliminar la imagen docker
+
+```bash
+  docker image rm [IMAGE_ID]
 
 ```
 

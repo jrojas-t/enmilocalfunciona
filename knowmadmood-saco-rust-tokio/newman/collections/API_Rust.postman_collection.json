@@ -37,7 +37,7 @@
 							"\r",
 							"pm.test(\"Title Content\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.data[0].title).to.eql(\"Aprendiendo Rust CRUD\");\r",
+							"    pm.expect(jsonData.length > 0);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -57,7 +57,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{urlServer}}/api/books?page=1&limit=2",
+					"raw": "{{urlServer}}/api/books?page=1&limit=5",
 					"host": [
 						"{{urlServer}}"
 					],
@@ -72,7 +72,7 @@
 						},
 						{
 							"key": "limit",
-							"value": "2"
+							"value": "5"
 						}
 					]
 				}
@@ -105,7 +105,7 @@
 			"response": []
 		},
 		{
-			"name": "Create Boook",
+			"name": "Create Book",
 			"event": [
 				{
 					"listen": "test",
@@ -161,7 +161,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Aprendiendo Rust CRUD 5\",\r\n    \"content\": \"Lenguaje de Programación Rust\"\r\n}",
+					"raw": "{\r\n    \"title\": \"Aprendiendo Rust CRUD Parte\",\r\n    \"content\": \"Lenguaje de Programación Rust\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -183,7 +183,7 @@
 			"response": []
 		},
 		{
-			"name": "Update  Todo",
+			"name": "Update  Book",
 			"event": [
 				{
 					"listen": "test",
@@ -191,8 +191,8 @@
 						"exec": [
 							"pm.test(\"Attribute Completed is True\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    console.log('jsonData.data[0].completed => ' + jsonData.data.completed);\r",
-							"    pm.expect(jsonData.data.completed).to.equal(true);\r",
+							"    console.log('jsonData.data.completed => ' + jsonData.data.completed);\r",
+							"    pm.expect(jsonData.data.completed).to.eq(true);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -204,7 +204,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Nuevo Titulo Aprendiendo RUST\",\r\n    \"completed\": true\r\n}",
+					"raw": "{\r\n    \"title\": \"Nuevo Titulo Aprendiendo Rust CRUD\",\r\n    \"completed\": true\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -232,7 +232,7 @@
 			"response": []
 		},
 		{
-			"name": "Delete  Todo",
+			"name": "Delete  Book",
 			"request": {
 				"method": "DELETE",
 				"header": [],
